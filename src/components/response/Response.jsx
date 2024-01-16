@@ -1,6 +1,7 @@
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { Tab, Tabs } from "react-bootstrap";
 import ResponseHeaders from "./ResponseHeaders";
+import { githubDark } from "@uiw/codemirror-theme-github";
 
 const Response = ({ body, headers }) => {
   let bodyJson = "";
@@ -9,13 +10,18 @@ const Response = ({ body, headers }) => {
   }
   return (
     <>
-      <Tabs>
+      <Tabs className="darkTab">
         <Tab
           eventKey={"responseBody"}
           title="Response body"
           className="p-3 border border-top-0"
         >
-          <ReactCodeMirror height="200px" readOnly value={bodyJson} />
+          <ReactCodeMirror
+            height="200px"
+            readOnly
+            value={bodyJson}
+            theme={githubDark}
+          />
         </Tab>
         <Tab
           eventKey={"headers"}

@@ -1,0 +1,9 @@
+.App {
+  height: 100vh;
+  background-color: #242323;
+  color: #ffffff;
+}
+
+.darkTab > li > button {
+  color: white;
+}

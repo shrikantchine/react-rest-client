@@ -3,13 +3,14 @@ import Request from "./components/request";
 import Response from "./components/response";
 import { FaJedi } from "react-icons/fa";
 import { Navbar } from "react-bootstrap";
+import "./App.css";
 
 function App() {
   const [responseBody, setResponseBody] = useState("");
   const [responseHeaders, setResponseHeaders] = useState([]);
   return (
-    <div>
-      <Navbar bg="light" data-bs-theme="light">
+    <div className="App">
+      <Navbar bg="dark" data-bs-theme="dark">
         <Navbar.Brand className="px-5">
           <FaJedi size={38} /> <span className="px-3">React Client</span>
         </Navbar.Brand>
@@ -18,7 +19,7 @@ function App() {
         <FaJedi size={40} />
         <h2 className="px-3 pt-1">React Client</h2>
       </div> */}
-      <div className="p-5 pt-4">
+      <div className="p-5 pt-4" data-bs-theme="dark">
         <Request
           setResponseBody={setResponseBody}
           setResponseHeaders={setResponseHeaders}

@@ -10,6 +10,8 @@ import {
 } from "react-bootstrap";
 import KeyValue from "../keyValue/KeyValue";
 import ReactCodeMirror from "@uiw/react-codemirror";
+import { BsFillSendFill } from "react-icons/bs";
+import { githubDark } from "@uiw/codemirror-theme-github";
 
 const getHeaderForFetch = (headers) => {
   const reqHeaders = new Headers();
@@ -90,9 +92,12 @@ export default Request = ({ setResponseBody, setResponseHeaders }) => {
             placeholder="http://example.com"
             name="httpUrl"
           />
-          <Button type="submit">Send</Button>
+          <Button type="submit">
+            <BsFillSendFill className="mx-2" />
+            Send
+          </Button>
         </InputGroup>
-        <Tabs className="mt-4">
+        <Tabs className="mt-4 darkTab">
           <Tab
             eventKey={"params"}
             title="Params"
@@ -120,6 +125,7 @@ export default Request = ({ setResponseBody, setResponseHeaders }) => {
               minHeight="200px"
               name="body"
               onChange={onBodyChange}
+              theme={githubDark}
             />
           </Tab>
         </Tabs>
